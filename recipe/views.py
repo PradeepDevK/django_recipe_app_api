@@ -28,6 +28,7 @@ class RecipeViewSets(viewsets.ModelViewSet):
         
         return serializers.RecipeDetailSerializer
     
+    #perform_create is nothing but Save hooks provided by the mixin classes
     def perform_create(self, serializer):
         """Create a new recipe"""
         serializer.save(user=self.request.user)
